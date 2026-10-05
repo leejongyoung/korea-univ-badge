@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#0089cf"/>
+  <!-- Bold Tech 'D' Shape with Internal Spark -->
+  <path d="M30 24 H50 C66 24 76 34 76 50 C76 66 66 76 50 76 H30 Z M42 36 V64 H50 C58 64 64 58 64 50 C64 42 58 36 50 36 Z" fill="#ffffff"/>
+</svg>

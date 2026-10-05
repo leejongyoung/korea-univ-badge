@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003876"/>
+      <stop offset="100%" stop-color="#001844"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Badge Outer Ring -->
+  <circle cx="60" cy="60" r="56" fill="url(#grad-blue)" stroke="#ffffff" stroke-width="2.5"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#d0d7de" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Mortarboard -->
+  <path d="M60 25 L98 42 L60 59 L22 42 Z" fill="#ffffff"/>
+  <path d="M36 50 v16 c0 7 11 13 24 13 s24 -6 24 -13 v-16" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <!-- Tassel -->
+  <path d="M90 44 v22 c0 2 2 4 4 4 s4 -2 4 -4 v-2" stroke="#ffffff" stroke-width="2" fill="none"/>
+  <circle cx="94" cy="68" r="2.5" fill="#ffffff"/>
+  <!-- Open Book of Knowledge -->
+  <path d="M40 82 c6 -4 13 -3 20 0 c7 -3 14 -4 20 0 v12 c-6 -4 -13 -3 -20 0 c-7 -3 -14 -4 -20 0 Z" fill="#ffffff"/>
+  <!-- Laurel Left -->
+  <path d="M22 66 C18 78 25 88 34 94 M20 72 C24 73 27 70 25 66 M24 81 C28 82 31 79 28 75" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Laurel Right -->
+  <path d="M98 66 C102 78 95 88 86 94 M100 72 C96 73 93 70 95 66 M96 81 C92 82 89 79 92 75" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

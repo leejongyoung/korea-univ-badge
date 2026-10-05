@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="189.0" height="28" viewBox="0 0 189.0 28" role="img" aria-label="국립부경대학교 PKNU">
+<title>국립부경대학교 PKNU (for-the-badge)</title>
+<defs><clipPath id="badge-shape"><rect width="189.0" height="28" rx="0"/></clipPath></defs>
+<g clip-path="url(#badge-shape)">
+<rect width="189.0" height="28" rx="0" fill="#ffffff"/>
+<path d="M129.0 0h60v28h-60z" fill="#57606a"/>
+</g>
+<rect x="0.5" y="0.5" width="188.0" height="27" rx="0" fill="none" stroke="#57606a"/>
+<g transform="translate(6.000 5.000) scale(0.180000)"><circle cx="50" cy="50" r="46" fill="#003f7f" />
+  
+  <path d="M22 62 C34 50 48 48 64 50 C74 52 82 46 86 38 C84 56 74 68 58 72 C42 76 28 72 22 62 Z" fill="#ffffff" />
+  <circle cx="70" cy="56" r="2.5" fill="#003f7f" />
+  <path d="M68 44 C72 38 76 34 82 32 M72 44 C76 40 82 38 86 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+</g>
+<text x="31.0" y="18" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif" font-size="11" font-weight="600">국립부경대학교</text>
+<text x="159" y="18" fill="#ffffff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700">PKNU</text>
+</svg>

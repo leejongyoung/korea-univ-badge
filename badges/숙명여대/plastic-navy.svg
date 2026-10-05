@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="205.0" height="20" viewBox="0 0 205.0 20" role="img" aria-label="숙명여자대학교 Sookmyung">
+<title>숙명여자대학교 Sookmyung (plastic)</title>
+<defs><clipPath id="badge-shape"><rect width="205.0" height="20" rx="4"/></clipPath></defs>
+<g clip-path="url(#badge-shape)">
+<rect width="205.0" height="20" rx="4" fill="#ffffff"/>
+<path d="M113.0 0h92v20h-92z" fill="#003764"/>
+<defs><linearGradient id="gloss" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-color="#000" stop-opacity=".3"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient></defs>
+<rect width="205.0" height="20" rx="4" fill="url(#gloss)"/>
+</g>
+<rect x="0.5" y="0.5" width="204.0" height="19" rx="4" fill="none" stroke="#d0d7de"/>
+<g transform="translate(6.000 3.000) scale(0.140000)"><circle cx="50" cy="50" r="46" fill="#00205b" />
+  
+  <circle cx="50" cy="30" r="12" fill="#ffffff" />
+  <circle cx="69" cy="44" r="12" fill="#ffffff" />
+  <circle cx="62" cy="67" r="12" fill="#ffffff" />
+  <circle cx="38" cy="67" r="12" fill="#ffffff" />
+  <circle cx="31" cy="44" r="12" fill="#ffffff" />
+  
+  <circle cx="50" cy="50" r="10" fill="#00205b" />
+  <circle cx="50" cy="50" r="5" fill="#ffffff" />
+</g>
+<text x="26.0" y="14" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif" font-size="11" font-weight="600">숙명여자대학교</text>
+<text x="159" y="14" fill="#ffffff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Sookmyung</text>
+</svg>

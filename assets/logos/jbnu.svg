@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#002b49"/>
+  <!-- Phoenix Wing Upward Sweep -->
+  <path d="M50 20 C60 30 72 36 82 46 C70 50 62 52 56 62 C58 70 54 76 50 78 C46 76 42 70 44 62 C38 52 30 50 18 46 C28 36 40 30 50 20 Z" fill="#ffffff"/>
+</svg>

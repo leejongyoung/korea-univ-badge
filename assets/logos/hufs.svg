@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#002c6c"/>
+  <!-- Owl Silhouette -->
+  <path d="M38 28 L44 34 C48 33 52 33 56 34 L62 28 C64 36 66 44 66 56 C66 68 58 76 50 76 C42 76 34 68 34 56 C34 44 36 36 38 28 Z" fill="#ffffff"/>
+  <!-- Big Eyes -->
+  <circle cx="44" cy="46" r="5" fill="#002c6c"/>
+  <circle cx="56" cy="46" r="5" fill="#002c6c"/>
+  <circle cx="44" cy="46" r="2" fill="#ffffff"/>
+  <circle cx="56" cy="46" r="2" fill="#ffffff"/>
+  <!-- Beak -->
+  <path d="M48 52 L52 52 L50 56 Z" fill="#002c6c"/>
+  <!-- Feather / Globe Arc -->
+  <path d="M26 50 C26 68 36 82 50 82 C64 82 74 68 74 50" fill="none" stroke="#ffffff" stroke-width="2"/>
+</svg>

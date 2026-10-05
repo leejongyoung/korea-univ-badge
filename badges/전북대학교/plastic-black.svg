@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143.0" height="20" viewBox="0 0 143.0 20" role="img" aria-label="전북대학교 JBNU">
+<title>전북대학교 JBNU (plastic)</title>
+<defs><clipPath id="badge-shape"><rect width="143.0" height="20" rx="4"/></clipPath></defs>
+<g clip-path="url(#badge-shape)">
+<rect width="143.0" height="20" rx="4" fill="#ffffff"/>
+<path d="M91.0 0h52v20h-52z" fill="#24292f"/>
+<defs><linearGradient id="gloss" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-color="#000" stop-opacity=".3"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient></defs>
+<rect width="143.0" height="20" rx="4" fill="url(#gloss)"/>
+</g>
+<rect x="0.5" y="0.5" width="142.0" height="19" rx="4" fill="none" stroke="#d0d7de"/>
+<g transform="translate(6.000 3.000) scale(0.140000)"><circle cx="50" cy="50" r="46" fill="#002b49" />
+  
+  <path d="M50 20 C60 30 72 36 82 46 C70 50 62 52 56 62 C58 70 54 76 50 78 C46 76 42 70 44 62 C38 52 30 50 18 46 C28 36 40 30 50 20 Z" fill="#ffffff" />
+</g>
+<text x="26.0" y="14" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif" font-size="11" font-weight="600">전북대학교</text>
+<text x="117" y="14" fill="#ffffff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">JBNU</text>
+</svg>

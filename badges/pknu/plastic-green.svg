@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="165.0" height="20" viewBox="0 0 165.0 20" role="img" aria-label="국립부경대학교 PKNU">
+<title>국립부경대학교 PKNU (plastic)</title>
+<defs><clipPath id="badge-shape"><rect width="165.0" height="20" rx="4"/></clipPath></defs>
+<g clip-path="url(#badge-shape)">
+<rect width="165.0" height="20" rx="4" fill="#ffffff"/>
+<path d="M113.0 0h52v20h-52z" fill="#1a7f37"/>
+<defs><linearGradient id="gloss" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-color="#000" stop-opacity=".3"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient></defs>
+<rect width="165.0" height="20" rx="4" fill="url(#gloss)"/>
+</g>
+<rect x="0.5" y="0.5" width="164.0" height="19" rx="4" fill="none" stroke="#d0d7de"/>
+<g transform="translate(6.000 3.000) scale(0.140000)"><circle cx="50" cy="50" r="46" fill="#003f7f" />
+  
+  <path d="M22 62 C34 50 48 48 64 50 C74 52 82 46 86 38 C84 56 74 68 58 72 C42 76 28 72 22 62 Z" fill="#ffffff" />
+  <circle cx="70" cy="56" r="2.5" fill="#003f7f" />
+  <path d="M68 44 C72 38 76 34 82 32 M72 44 C76 40 82 38 86 38" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+</g>
+<text x="26.0" y="14" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif" font-size="11" font-weight="600">국립부경대학교</text>
+<text x="139" y="14" fill="#ffffff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">PKNU</text>
+</svg>

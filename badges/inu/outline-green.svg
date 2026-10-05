@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="145.0" height="22" viewBox="0 0 145.0 22" role="img" aria-label="인천대학교 INU">
+<title>인천대학교 INU (outline)</title>
+<defs><clipPath id="badge-shape"><rect width="145.0" height="22" rx="4"/></clipPath></defs>
+<g clip-path="url(#badge-shape)">
+<rect width="145.0" height="22" rx="4" fill="#ffffff"/>
+<path d="M97.0 0h48v22h-48z" fill="#ffffff"/>
+</g>
+<rect x="0.5" y="0.5" width="144.0" height="21" rx="4" fill="none" stroke="#1a7f37"/>
+<g transform="translate(6.000 5.411) scale(0.282063)"><defs id="defs2">
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath31">
+      <path d="M 0,595.276 H 841.89 V 0 H 0 Z" id="path29" />
+    </clipPath>
+  </defs>
+  <g xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" ns1:label="레이어 1" ns1:groupmode="layer" id="layer1" transform="translate(-64.34933,-117.81116)">
+    <g id="g15" ns1:label="INU 워드마크" transform="matrix(0.27405519,0,0,-0.27405519,-15.543732,218.92936)">
+      <g id="g17" transform="translate(377.0283,224.3789)">
+        <path d="M 0,0 18.451,18.459 H -33.76 V 70.674 L -52.214,52.215 V 0 Z" style="fill:#fcaf16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path19" />
+      </g>
+      <g id="g21" transform="translate(417.1909,368.9702)">
+        <path d="m 0,0 -18.45,-18.452 h 52.212 v -52.211 l 18.453,18.456 V 0 Z" style="fill:#fcaf16;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path23" />
+      </g>
+      <g id="g25">
+        <g id="g27" clip-path="url(#clipPath31)">
+          <g id="g33" transform="translate(320.2578,341.5366)">
+            <path d="m 0,0 h -28.736 v -1.076 c 0.004,-0.006 0.009,-0.01 0.016,-0.013 h -0.015 c 2.604,-3.341 4.173,-6.521 4.244,-12.017 v -72.37 c 0.036,-0.679 0.225,-1.107 0.821,-1.386 0.787,-0.37 1.388,-0.012 2.47,1.068 l 16.955,16.955 v 55.877 c 0.097,5.409 1.662,8.56 4.245,11.873 h -0.018 c 0.005,0.003 0.011,0.007 0.018,0.013 z" style="fill:#01499a;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path35" />
+          </g>
+          <g id="g37" transform="translate(550.251,341.5366)">
+            <path d="m 0,0 h -28.747 v -1.076 c 0.005,-0.006 0.012,-0.01 0.015,-0.013 h -0.001 c 2.517,-3.231 4.072,-6.299 4.236,-11.465 v -43.381 c 0,-8.711 -7.058,-15.773 -15.767,-15.773 -8.704,0 -15.766,7.062 -15.766,15.773 V -4.43 c 0,1.012 -0.038,2.051 -0.832,2.332 -0.81,0.297 -1.255,0.05 -2.327,-1.028 v 0.006 l -17.09,-17.09 v -34.302 c 0,-19.89 16.127,-36.009 36.015,-36.009 19.892,0 36.016,16.119 36.016,36.009 v 41.142 c 0.021,5.665 1.604,8.885 4.248,12.281 h -0.015 c 0.005,0.003 0.01,0.007 0.015,0.013 z" style="fill:#01499a;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path39" />
+          </g>
+          <g id="g41" transform="translate(437.6836,341.5366)">
+            <path d="m 0,0 h -28.746 v -1.076 c 0.01,-0.006 0.014,-0.01 0.017,-0.013 h -0.017 c 2.648,-3.396 4.23,-6.616 4.253,-12.281 v -37.39 l -28.434,45.759 -23.347,-23.35 v -47.277 0.002 c 0,-5.743 -1.589,-8.978 -4.254,-12.4 v -1.077 h 28.741 v 1.077 c -0.006,0 -0.008,0.003 -0.013,0.007 -2.562,3.292 -4.124,6.42 -4.236,11.769 v 37.902 l 28.43,-45.757 23.35,23.355 v 47.599 c 0.06,5.526 1.633,8.709 4.246,12.062 h -0.004 c 0.004,0.003 0.008,0.007 0.014,0.013 z" style="fill:#01499a;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path43" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</g>
+<text x="32.0" y="15" fill="#1f2328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif" font-size="11" font-weight="600">인천대학교</text>
+<text x="121" y="15" fill="#1a7f37" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">INU</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#004c97"/>
+  <!-- Soongsil Cross & White Horse Crest -->
+  <path d="M46 20 H54 V46 H76 V54 H54 V80 H46 V54 H24 V46 H46 Z" fill="#ffffff"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+</svg>

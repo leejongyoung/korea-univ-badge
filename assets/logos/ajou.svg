@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#003876"/>
+  <!-- Pioneer Flame Torch -->
+  <path d="M50 18 C56 26 60 34 54 44 C50 50 44 54 46 64 H54 C56 54 50 50 46 44 C42 34 46 26 50 18 Z" fill="#ffffff"/>
+  <!-- Torch Handle -->
+  <path d="M45 64 H55 L53 82 H47 Z" fill="#ffffff"/>
+  <!-- Flame Rays -->
+  <circle cx="50" cy="36" r="4" fill="#003876"/>
+</svg>
