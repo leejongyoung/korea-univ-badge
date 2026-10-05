@@ -146,6 +146,8 @@ python3 scripts/generate.py --univ snu --label-color "#ffffff" --text-color "#0f
 | **경희대학교** | `khu` | 경희대 | `#9b1c2e` | ![khu](badges/khu/flat.svg) | ![khu outline](badges/khu/outline.svg) |
 | **한국외국어대학교** | `hufs` | 한국외대 | `#002c6c` | ![hufs](badges/hufs/flat.svg) | ![hufs outline](badges/hufs/outline.svg) |
 | **서울시립대학교** | `uos` | 서울시립대 | `#1e3a8a` | ![uos](badges/uos/flat.svg) | ![uos outline](badges/uos/outline.svg) |
+| **인하대학교** | `inha` | 인하대 | `#004b87` | ![inha](badges/inha/flat.svg) | ![inha outline](badges/inha/outline.svg) |
+| **아주대학교** | `ajou` | 아주대 | `#003876` | ![ajou](badges/ajou/flat.svg) | ![ajou outline](badges/ajou/outline.svg) |
 | **이화여자대학교** | `ewha` | 이화여대 | `#00462a` | ![ewha](badges/ewha/flat.svg) | ![ewha outline](badges/ewha/outline.svg) |
 | **부산대학교** | `pnu` | 부산대 | `#003b80` | ![pnu](badges/pnu/flat.svg) | ![pnu outline](badges/pnu/outline.svg) |
 | **경북대학교** | `knu` | 경북대 | `#b71a2b` | ![knu](badges/knu/flat.svg) | ![knu outline](badges/knu/outline.svg) |
