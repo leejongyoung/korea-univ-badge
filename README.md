@@ -112,6 +112,12 @@ python3 scripts/generate.py --univ kaist --color "#8250df" --style flat --out cu
 
 # 배경색과 텍스트 색상 모두 커스텀 지정
 python3 scripts/generate.py --univ snu --label-color "#ffffff" --text-color "#0f0f70" --color "#0969da" --out custom-snu.svg
+
+# 내장 프리셋(navy)의 메시지 배경은 유지하고 label 배경·글자색만 지정
+python3 scripts/generate.py --univ kaist --color navy --label-color "#f8f9fa" --text-color "#112233" --out custom-navy.svg
+
+# --color 없이 label/text 색만 지정하면 대학 기본 테마의 메시지 배경을 유지
+python3 scripts/generate.py --univ kaist --label-color "#f8f9fa" --text-color "#112233" --out custom-default.svg
 ```
 
 ---
