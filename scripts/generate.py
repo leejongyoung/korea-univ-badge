@@ -279,14 +279,42 @@ def build_expected_badges(universities, logos):
     return expected
 
 
+def resolve_cli_colors(color, label_color, text_color, brand_color):
+    """CLI 색상 옵션을 render_badge 인자로 변환한다.
+
+    --label-color / --text-color 는 기본 테마, 내장 프리셋, 임의 색상 어디서든 적용된다.
+    둘 다 생략하면 기존과 같이 테마/프리셋 색을 그대로 쓴다.
+    """
+    color_theme = "brand"
+    msg_color = stroke_color = brand_color
+    arbitrary = False
+    if color:
+        if color in COLOR_THEMES:
+            color_theme = color
+            msg_color = COLOR_THEMES[color]["message_color"]
+            stroke_color = COLOR_THEMES[color]["stroke_color"]
+        else:
+            msg_color = stroke_color = color
+            arbitrary = True
+    if not (arbitrary or label_color or text_color):
+        return color_theme, None
+    return color_theme, {
+        "message_color": msg_color,
+        "label_color": label_color or "#ffffff",
+        "text_color": text_color or "#1f2328",
+        "version_color": "#ffffff",
+        "stroke_color": stroke_color,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="verify committed badges match generated output")
     parser.add_argument("--univ", help="generate on-demand custom badge for specific university id or name")
     parser.add_argument("--style", default="flat", choices=STYLES, help="badge style")
     parser.add_argument("--color", help="custom message background color (e.g. #8250df or red)")
-    parser.add_argument("--label-color", default="#ffffff", help="custom label background color (hex)")
-    parser.add_argument("--text-color", default="#1f2328", help="custom label text color (hex)")
+    parser.add_argument("--label-color", help="custom label background color (hex, default #ffffff)")
+    parser.add_argument("--text-color", help="custom label text color (hex, default #1f2328)")
     parser.add_argument("--out", help="output file path for custom badge")
     args = parser.parse_args()
 
@@ -300,21 +328,8 @@ def main():
             print(f"Error: university {args.univ!r} not found", file=sys.stderr)
             return 1
         univ = matched[0]
-        custom_cols = None
-        color_theme = "brand"
         brand_color = univ.get("brand_color", "#003876")
-
-        if args.color:
-            if args.color in COLOR_THEMES:
-                color_theme = args.color
-            else:
-                custom_cols = {
-                    "message_color": args.color,
-                    "label_color": args.label_color,
-                    "text_color": args.text_color,
-                    "version_color": "#ffffff",
-                    "stroke_color": args.color,
-                }
+        color_theme, custom_cols = resolve_cli_colors(args.color, args.label_color, args.text_color, brand_color)
         svg = render_badge(
             univ["name"],
             univ["en_short"],

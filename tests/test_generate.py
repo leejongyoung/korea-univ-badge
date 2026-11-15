@@ -2,6 +2,8 @@
 """Tests for Korea University Badge generator and data integrity."""
 
 import importlib.util
+import subprocess
+import sys
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
@@ -151,6 +153,34 @@ class KoreaUnivBadgeTests(unittest.TestCase):
             out_file.write_text(svg, encoding="utf-8")
             self.assertTrue(out_file.exists())
             self.assertIn("ITC", out_file.read_text(encoding="utf-8"))
+
+    def _cli(self, *extra):
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "generate.py"), "--univ", "kaist", *extra],
+            capture_output=True, text=True, check=True,
+        )
+        return proc.stdout
+
+    def test_cli_label_and_text_color_apply_to_every_color_mode(self):
+        base_default = self._cli()
+        base_navy = self._cli("--color", "navy")
+        navy_msg = generate.COLOR_THEMES["navy"]["message_color"]
+        opts = ("--label-color", "#f8f9fa", "--text-color", "#112233")
+        # 기본 테마 / 내장 프리셋 / 임의 Hex 모두에서 label·text 색이 반영된다.
+        for color_args in ((), ("--color", "navy"), ("--color", "#8250df")):
+            svg = self._cli(*color_args, *opts)
+            self.assertIn("#f8f9fa", svg, color_args)
+            self.assertIn("#112233", svg, color_args)
+        # 프리셋의 메시지 배경은 label/text 옵션을 줘도 유지된다.
+        self.assertIn(navy_msg, self._cli("--color", "navy", *opts))
+        # label 만 지정하면 text 는 기본값을 유지한다.
+        only_label = self._cli("--color", "navy", "--label-color", "#f8f9fa")
+        self.assertIn("#f8f9fa", only_label)
+        self.assertIn("#1f2328", only_label)
+        # 옵션을 생략하면 기존 출력과 같다.
+        self.assertEqual(base_default, self._cli())
+        self.assertEqual(base_navy, self._cli("--color", "navy"))
+        self.assertNotIn("#f8f9fa", base_navy)
 
 
 if __name__ == "__main__":
