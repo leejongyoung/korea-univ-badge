@@ -197,6 +197,21 @@ python3 scripts/generate.py --check
 
 ---
 
+## 로고 갱신 순서
+
+`assets/logos/*.svg`는 출처가 다른 두 종류가 섞여 있습니다.
+
+- `scripts/fetch_official_logos.py`가 내려받은 **수집 로고**
+- `scripts/create_logos.py`가 직접 그린 **합성 심벌**(공식 로고가 아님)
+
+로고를 갱신할 때는 이 순서를 따르세요.
+
+1. 공식 로고는 `python3 scripts/fetch_official_logos.py`로 수집하고, 출처와 사용 가능 여부를 확인합니다.
+2. `python3 scripts/create_logos.py`는 **이미 있는 파일을 덮어쓰지 않고 건너뜁니다.** 수집 로고가 합성 심벌로 바뀌지 않습니다. 합성 심벌로 의도적으로 교체할 때만 `--force`를 붙이세요.
+3. 로고를 바꾼 뒤 `python3 scripts/generate.py`로 배지를 다시 만들고, `python3 scripts/generate.py --check`로 일치 여부를 확인합니다.
+
+---
+
 ## 라이선스
 
 본 저장소의 빌드 스크립트, 테스트 코드 및 CI 설정은 [MIT License](LICENSE)에 따라 자유롭게 사용 및 수정하실 수 있습니다. 각 배지에 포함된 대학교의 상징, 로고, 명칭에 관한 권리는 해당 대학교 및 학교법인에 귀속되며, 문서 상단의 사용 수칙을 준수해 주시기 바랍니다.

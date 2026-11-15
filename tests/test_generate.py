@@ -13,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("generate", ROOT / "scripts" / "generate.py")
 generate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(generate)
+spec_logos = importlib.util.spec_from_file_location("create_logos", ROOT / "scripts" / "create_logos.py")
+create_logos = importlib.util.module_from_spec(spec_logos)
+spec_logos.loader.exec_module(create_logos)
 
 
 class KoreaUnivBadgeTests(unittest.TestCase):
@@ -182,6 +185,26 @@ class KoreaUnivBadgeTests(unittest.TestCase):
         self.assertEqual(base_navy, self._cli("--color", "navy"))
         self.assertNotIn("#f8f9fa", base_navy)
 
+    def test_create_logos_does_not_overwrite_existing_assets(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            d = Path(tmpdir)
+            collected = d / "kaist.svg"
+            collected.write_text("<svg>collected official</svg>\n", encoding="utf-8")
+            created, skipped = create_logos.write_logos(create_logos.logos, d)
+            self.assertEqual(collected.read_text(encoding="utf-8"), "<svg>collected official</svg>\n")
+            self.assertIn("kaist.svg", skipped)
+            self.assertNotIn("kaist.svg", created)
+            self.assertTrue((d / "snu.svg").exists())
+            # --force 일 때만 의도적으로 교체한다.
+            create_logos.write_logos(create_logos.logos, d, force=True)
+            self.assertNotEqual(collected.read_text(encoding="utf-8"), "<svg>collected official</svg>\n")
+
+    def test_committed_logos_are_untouched_by_default_run(self):
+        before = {p.name: p.read_bytes() for p in (ROOT / "assets" / "logos").glob("*.svg")}
+        created, _ = create_logos.write_logos(create_logos.logos, ROOT / "assets" / "logos")
+        after = {p.name: p.read_bytes() for p in (ROOT / "assets" / "logos").glob("*.svg")}
+        self.assertEqual(before, after)
+        self.assertEqual(created, [])
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""Generate crisp, high quality university emblem SVG files."""
+"""Generate crisp, high quality university emblem SVG files.
 
+주의: 이 스크립트가 만드는 도형은 직접 그린 합성 심벌이며 공식 로고가 아닙니다.
+이미 존재하는 assets/logos/*.svg(수집한 공식 로고 등)는 덮어쓰지 않고 건너뜁니다.
+존재하는 파일까지 의도적으로 교체하려면 --force 를 사용하세요.
+"""
+
+import argparse
 from pathlib import Path
 
 LOGOS_DIR = Path(__file__).resolve().parents[1] / "assets" / "logos"
-LOGOS_DIR.mkdir(parents=True, exist_ok=True)
 
 # 1. univ.svg (Standard University Emblem: Laurels, Mortarboard & Open Book)
 univ_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -447,9 +452,36 @@ logos = {
     "dgist": dgist_svg,
 }
 
-for name, svg in logos.items():
-    p = LOGOS_DIR / f"{name}.svg"
-    p.write_text(svg.strip() + "\n", encoding="utf-8")
-    print(f"Created logo: {p.name}")
+def write_logos(logos, logos_dir, force=False):
+    """합성 심벌을 logos_dir 에 쓴다. force 가 아니면 기존 파일은 건드리지 않는다.
 
-print(f"Total logos generated: {len(logos)}")
+    반환값: (새로 만든 파일 이름 목록, 건너뛴 파일 이름 목록)
+    """
+    logos_dir = Path(logos_dir)
+    logos_dir.mkdir(parents=True, exist_ok=True)
+    created, skipped = [], []
+    for name, svg in logos.items():
+        p = logos_dir / f"{name}.svg"
+        if p.exists() and not force:
+            skipped.append(p.name)
+            continue
+        p.write_text(svg.strip() + "\n", encoding="utf-8")
+        created.append(p.name)
+    return created, skipped
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--force", action="store_true", help="이미 있는 로고 파일도 합성 심벌로 덮어쓴다")
+    args = parser.parse_args()
+    created, skipped = write_logos(logos, LOGOS_DIR, force=args.force)
+    for name in created:
+        print(f"Created logo: {name}")
+    for name in skipped:
+        print(f"Skipped existing logo (use --force to overwrite): {name}")
+    print(f"Total logos generated: {len(created)} (skipped {len(skipped)})")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
