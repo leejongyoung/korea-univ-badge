@@ -10,6 +10,25 @@ DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
 data = json.loads((ROOT / "universities.json").read_text(encoding="utf-8"))
 
+# 공통 심벌(univ.svg)을 쓰는 항목은 해당 대학의 공식 엠블럼이 아니므로 이름 옆에 † 로 표시한다.
+COMMON_SYMBOL_MARK = " †"
+LEGEND = (
+    "† 표시는 해당 대학의 공식 엠블럼이 아니라 **공통 대학 심벌(학사모·책 도형)** 을 쓰는 배지입니다. "
+    "대학명과 대표 상징색은 제공하지만 로고의 출처·공식성은 확인되지 않은 상태입니다."
+)
+
+
+def mark(u):
+    return COMMON_SYMBOL_MARK if u.get("logo", "univ") == "univ" else ""
+
+
+def write_doc(filename, lines):
+    body = "\n".join(lines) + "\n"
+    if COMMON_SYMBOL_MARK in body:
+        body += "\n" + LEGEND + "\n"
+    (DOCS_DIR / filename).write_text(body, encoding="utf-8")
+
+
 # 1. docs/national-univ.md (거점국립대 및 국공립대)
 national_list = [u for u in data if u["type"] in ("거점국립대", "국공립대", "공립대") and u["type"] != "전문대학"]
 
@@ -33,7 +52,7 @@ for u in national_list:
         col = u["brand_color"]
         hp = u["homepage"]
         nat_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} ftb](../badges/{uid}/for-the-badge.svg) | "
@@ -59,14 +78,14 @@ for u in national_list:
         col = u["brand_color"]
         hp = u["homepage"]
         nat_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} outline](../badges/{uid}/outline.svg) | "
             f"[{name}]({hp}) |"
         )
 
-(DOCS_DIR / "national-univ.md").write_text("\n".join(nat_doc) + "\n", encoding="utf-8")
+write_doc("national-univ.md", nat_doc)
 print("Generated docs/national-univ.md")
 
 
@@ -93,7 +112,7 @@ for u in tech_special_list:
         col = u["brand_color"]
         hp = u["homepage"]
         tech_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} ftb](../badges/{uid}/for-the-badge.svg) | "
@@ -119,14 +138,14 @@ for u in tech_special_list:
         col = u["brand_color"]
         hp = u["homepage"]
         tech_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} outline](../badges/{uid}/outline.svg) | "
             f"[{name}]({hp}) |"
         )
 
-(DOCS_DIR / "tech-institutes.md").write_text("\n".join(tech_doc) + "\n", encoding="utf-8")
+write_doc("tech-institutes.md", tech_doc)
 print("Generated docs/tech-institutes.md")
 
 
@@ -150,14 +169,14 @@ for u in edu_list:
     col = u["brand_color"]
     hp = u["homepage"]
     edu_doc.append(
-        f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+        f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
         f"![{uid} flat](../badges/{uid}/flat.svg) | "
         f"![{uid} square](../badges/{uid}/flat-square.svg) | "
         f"![{uid} outline](../badges/{uid}/outline.svg) | "
         f"[{name}]({hp}) |"
     )
 
-(DOCS_DIR / "education-univ.md").write_text("\n".join(edu_doc) + "\n", encoding="utf-8")
+write_doc("education-univ.md", edu_doc)
 print("Generated docs/education-univ.md")
 
 
@@ -183,7 +202,7 @@ for u in priv_list:
         col = u["brand_color"]
         hp = u["homepage"]
         priv_doc.append(
-            f"| **{name}** | `{en_short}` | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} ftb](../badges/{uid}/for-the-badge.svg) | "
@@ -209,7 +228,7 @@ for u in priv_list:
         col = u["brand_color"]
         hp = u["homepage"]
         priv_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} outline](../badges/{uid}/outline.svg) | "
@@ -235,14 +254,14 @@ for u in priv_list:
         col = u["brand_color"]
         hp = u["homepage"]
         priv_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} outline](../badges/{uid}/outline.svg) | "
             f"[{name}]({hp}) |"
         )
 
-(DOCS_DIR / "private-univ.md").write_text("\n".join(priv_doc) + "\n", encoding="utf-8")
+write_doc("private-univ.md", priv_doc)
 print("Generated docs/private-univ.md")
 
 
@@ -269,7 +288,7 @@ for u in vocational_list:
         col = u["brand_color"]
         hp = u["homepage"]
         voc_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} ftb](../badges/{uid}/for-the-badge.svg) | "
@@ -295,12 +314,12 @@ for u in vocational_list:
         col = u["brand_color"]
         hp = u["homepage"]
         voc_doc.append(
-            f"| **{name}** | `{en_short}` | {reg} | `{col}` | "
+            f"| **{name}**{mark(u)} | `{en_short}` | {reg} | `{col}` | "
             f"![{uid} flat](../badges/{uid}/flat.svg) | "
             f"![{uid} square](../badges/{uid}/flat-square.svg) | "
             f"![{uid} outline](../badges/{uid}/outline.svg) | "
             f"[{name}]({hp}) |"
         )
 
-(DOCS_DIR / "vocational-colleges.md").write_text("\n".join(voc_doc) + "\n", encoding="utf-8")
+write_doc("vocational-colleges.md", voc_doc)
 print("Generated docs/vocational-colleges.md")

@@ -206,5 +206,19 @@ class KoreaUnivBadgeTests(unittest.TestCase):
         self.assertEqual(before, after)
         self.assertEqual(created, [])
 
+    def test_catalog_marks_common_symbol_universities(self):
+        import json, re
+        universities = json.loads((ROOT / "universities.json").read_text(encoding="utf-8"))
+        common = {u["name"] for u in universities if u.get("logo", "univ") == "univ"}
+        marked = set()
+        unmarked = set()
+        for doc in (ROOT / "docs").glob("*.md"):
+            for m in re.finditer(r"^\| \*\*(.+?)\*\*( †)? \|", doc.read_text(encoding="utf-8"), re.M):
+                (marked if m.group(2) else unmarked).add(m.group(1))
+        self.assertEqual(marked, common & (marked | unmarked))
+        self.assertTrue(marked)
+        self.assertFalse(marked & unmarked - common)
+        self.assertFalse(unmarked & common)
+
 if __name__ == "__main__":
     unittest.main()
